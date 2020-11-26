@@ -1,34 +1,42 @@
 <template>
   <div class="container">
     <div>
+      <!-- component 불러오기 -->
       <Logo />
       <h1 class="title">
         nuxt-study
       </h1>
       <div class="links">
         <a
-          href="https://nuxtjs.org/"
-          target="_blank"
+          href="/a-link"
+          target="_self"
           rel="noopener noreferrer"
           class="button--green"
         >
-          Documentation
+          a-link
         </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+        <!-- nuxt router link -->
+        <nuxt-link to ="/nuxt-link" class="button--grey">nuxt-link</nuxt-link>
+        <button class="button--green" @click="$router.push('/router-push')">router-push</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data(){
+    return {
+
+    }
+  },
+
+  mothods: {
+    routerPush() {
+      alert('test');
+    }
+  }
+}
 </script>
 
 <style>
